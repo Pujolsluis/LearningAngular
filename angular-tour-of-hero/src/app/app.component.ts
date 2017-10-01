@@ -16,5 +16,4 @@ export class AppComponent {
     id: 1,
     name: 'Windstorm'
   };
-
 }
