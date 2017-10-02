@@ -8,6 +8,7 @@ import {HighlightDirective} from './highlight.directive';
 })
 export class AppComponent {
   color: string;
+  defaultColor: string;
 
-  constructor() { }
+  constructor() { this.defaultColor = 'violet'}
 }
