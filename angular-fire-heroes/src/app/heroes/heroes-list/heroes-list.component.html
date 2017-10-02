@@ -1,3 +1,4 @@
-<p>
-  heroes-list works!
-</p>
+<div *ngFor="let heroe of heroes" | async>
+  <app-heroe-detail [heroe]='heroe'></app-heroe-detail>
+  <button (click)='deleteHeroes()'>Delete List of Heroes</button>
+</div>
