@@ -11,9 +11,23 @@ export class HeroeDetailComponent implements OnInit {
 
   @Input() heroe: Heroe;
 
-  constructor(heroeSvc: HeroeService) { }
+  constructor(private heroeSvc: HeroeService) { }
 
   ngOnInit() {
   }
+
+  updateTimeStamp() {
+    const date = new Date().getTime();
+    this.heroeSvc.updateHeroe(this.heroe.$key, { timeStamp: date });
+  }
+
+  updateActive(value: boolean) {
+    this.heroeSvc.updateHeroe(this.heroe.$key, { active: value });
+  }
+
+  deleteHeroe() {
+    this.heroeSvc.deleteHeroe(this.heroe.$key);
+  }
+
 
 }
