@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Heroe} from '../shared/heroe';
+import {HeroeService} from '../shared/heroe.service';
 
 @Component({
   selector: 'app-heroe-detail',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroeDetailComponent implements OnInit {
 
-  constructor() { }
+  @Input() heroe: Heroe;
+
+  constructor(heroeSvc: HeroeService) { }
 
   ngOnInit() {
   }
