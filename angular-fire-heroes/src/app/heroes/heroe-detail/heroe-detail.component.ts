@@ -1,6 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Heroe} from '../shared/heroe';
 import {HeroeService} from '../shared/heroe.service';
+import {AngularFireDatabase} from 'angularfire2/database';
+import * as firebase from 'firebase';
+import {isNullOrUndefined} from 'util';
 
 @Component({
   selector: 'app-heroe-detail',
@@ -11,14 +14,25 @@ export class HeroeDetailComponent implements OnInit {
 
   @Input() heroe: Heroe;
 
-  constructor(private heroeSvc: HeroeService) { }
+  constructor(private heroeSvc: HeroeService, private db: AngularFireDatabase) {
+
+    const offsetRef = firebase.database().ref('.info/serverTimeOffSet');
+    let offset = 0;
+
+    offsetRef.on('value', function (snap) {
+      offset = snap.val();
+    });
+
+    if (isNullOrUndefined(this.heroe)) {
+        this.heroe.timeStamp = new Date().getTime() + offset;
+    }
+  }
 
   ngOnInit() {
   }
 
   updateTimeStamp() {
-    const date = new Date().getTime();
-    this.heroeSvc.updateHeroe(this.heroe.$key, { timeStamp: date });
+    this.heroeSvc.updateHeroe(this.heroe.$key, { timeStamp: (firebase.database.ServerValue.TIMESTAMP)});
   }
 
   updateActive(value: boolean) {

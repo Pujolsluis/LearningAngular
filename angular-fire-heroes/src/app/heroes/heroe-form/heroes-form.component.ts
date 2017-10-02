@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Heroe} from '../shared/heroe';
+import {HeroeService} from '../shared/heroe.service';
 
 @Component({
   selector: 'app-heroes-form',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroesFormComponent implements OnInit {
 
-  constructor() { }
+  heroe: Heroe = new Heroe();
+
+  constructor(private heroeSvc: HeroeService) { }
 
   ngOnInit() {
+  }
+
+  createHeroe() {
+    this.heroeSvc.createHeroe(this.heroe);
+    this.heroe = new Heroe();
   }
 
 }

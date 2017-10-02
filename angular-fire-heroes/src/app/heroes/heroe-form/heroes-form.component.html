@@ -1,3 +1,7 @@
-<p>
-  heroes-form works!
-</p>
+<div>
+  <form #heroeForm="ngForm">
+    <input type="text" name="name" [(ngModel)]="heroe.name">
+    <input type="text" name="name" [(ngModel)]="heroe.description">
+    <input type="checkbox" name="name" [(ngModel)]="heroe.active">
+  </form>
+</div>

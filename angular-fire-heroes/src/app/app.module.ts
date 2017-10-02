@@ -9,6 +9,7 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import { HeroesListComponent } from './heroes/heroes-list/heroes-list.component';
 import { HeroesFormComponent } from './heroes/heroe-form/heroes-form.component';
 import { HeroeDetailComponent } from './heroes/heroe-detail/heroe-detail.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HeroeDetailComponent } from './heroes/heroe-detail/heroe-detail.compone
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
