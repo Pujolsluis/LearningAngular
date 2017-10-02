@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {AngularFireDatabase} from 'angularfire2/database';
+import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,9 @@ import {AngularFireDatabase} from 'angularfire2/database';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-
+  title = 'Angular Fire Heroes';
+  items: FirebaseListObservable<any[]>;
   constructor(db: AngularFireDatabase) {
-
+    this.items = db.list('motivational_post');
   }
 }
