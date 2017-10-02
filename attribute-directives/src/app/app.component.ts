@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {HighlightDirective} from './highlight.directive';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   color: string;
 
-  constructor() {
-    this.color = 'yellow';
-  }
+  constructor() { }
 }
