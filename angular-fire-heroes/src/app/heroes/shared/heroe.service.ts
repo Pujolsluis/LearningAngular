@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database';
 import {Heroe} from './heroe';
+import * as firebase from 'firebase';
+import {FirebaseApp} from 'angularfire2'
 
 @Injectable()
 export class HeroeService {
@@ -10,7 +12,7 @@ export class HeroeService {
   heroes: FirebaseListObservable<Heroe[]>; // list of heroes
   heroe: FirebaseObjectObservable<Heroe> ; // single heroe
 
-  constructor(private db: AngularFireDatabase) {
+  constructor(private db: AngularFireDatabase, private firebaseApp: FirebaseApp) {
   }
 
   getHeroesList(query= {}): FirebaseListObservable<Heroe[]> {
@@ -36,16 +38,18 @@ export class HeroeService {
 
   createHeroe(heroe: Heroe): void {
     let  key: string;
-    key = this.db.database.ref(this.basePath).key;
+    key = this.db.database.ref(this.basePath).push().key;
     heroe.key = key;
-
     console.log(key); // log key to console
     console.log(heroe); // log current hero data before pushing to firebase
-    this.heroes.push(heroe)
+    heroe.timeStamp = firebase.database.ServerValue.TIMESTAMP;
+    console.log(heroe.timeStamp);
+    this.heroes.update( key, heroe)
       .catch(error => this.handleError(error));
   }
 
   updateHeroe(key: string, value: any): void {
+    console.log(key);
     this.heroes.update(key, value)
       .catch(error => this.handleError(error));
   }

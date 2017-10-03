@@ -2,10 +2,9 @@ export class Heroe {
   key: string;
   name: string;
   description: string;
-  timeStamp: number;
+  timeStamp: any;
   active = true;
 
   public constructor() {
-    this.name = '';
   }
 }

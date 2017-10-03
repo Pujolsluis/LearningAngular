@@ -1,8 +1,9 @@
 <h5>{{heroe.key}}</h5>
-<p>Heroe Name: {{heroe.name}} | Heroe Description: {{heroe.description}}
-  | Heroe is Active: {{heroe.active}}</p>
+<p>Heroe Name: {{heroe.name}}</p>
+<p>Heroe Description: {{heroe.description}}</p>
+<p>Heroe is Active: {{heroe.active}}</p>
 
-<span (click)='updateTimeStamp()'>Update Timestamp</span>
-<span *ngIf='heroe.active' (click)='updateActive(false)'>Mark UnActive</span>
-<span *ngIf='heroe.active' (click)='updateActive(true)'>Mark Active</span>
-<span (click)='deleteHeroe()'>Delete</span>
+<button (click)='updateTimeStamp()'>Update Timestamp</button>
+<button *ngIf='heroe.active' (click)='updateActive(false)'>Mark UnActive</button>
+<button *ngIf='heroe.active' (click)='updateActive(true)'>Mark Active</button>
+<button (click)='deleteHeroe()'>Delete</button>

@@ -16,23 +16,25 @@ export class HeroeDetailComponent implements OnInit {
 
   constructor(private heroeSvc: HeroeService, private db: AngularFireDatabase) {
 
-    // const offsetRef = firebase.database().ref('.info/serverTimeOffSet');
-    // let offset = 0;
-    //
-    // offsetRef.on('value', function (snap) {
-    //   offset = snap.val();
-    // });
-    //
-    // if (isNullOrUndefined(this.heroe)) {
-    //     this.heroe.timeStamp = new Date().getTime() + offset;
-    // }
+    const offsetRef = firebase.database().ref('.info/serverTimeOffSet');
+    let offset = 0;
+
+    offsetRef.on('value', function (snap) {
+      offset = snap.val();
+    });
+
+    if (!isNullOrUndefined(this.heroe)) {
+        this.heroe.timeStamp = new Date().getTime() + offset;
+    }
   }
 
   ngOnInit() {
   }
 
   updateTimeStamp() {
-    //this.heroeSvc.updateHeroe(this.heroe.key, { timeStamp: (firebase.database.ServerValue.TIMESTAMP)});
+    console.log('hey my key is: ' + this.heroe.key);
+
+    this.heroeSvc.updateHeroe(this.heroe.key, { timeStamp: (firebase.database.ServerValue.TIMESTAMP)});
   }
 
   updateActive(value: boolean) {
