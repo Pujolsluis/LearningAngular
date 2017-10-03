@@ -36,7 +36,7 @@ export class HeroeService {
 
   createHeroe(heroe: Heroe): void {
     let  key: string;
-    key = this.heroes.push(heroe).key;
+    key = this.db.database.ref(this.basePath).key;
     heroe.key = key;
     console.log(key); // log key to console
     console.log(heroe); // log current hero data before pushing to firebase
