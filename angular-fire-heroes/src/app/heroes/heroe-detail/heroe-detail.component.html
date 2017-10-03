@@ -5,5 +5,5 @@
 
 <button (click)='updateTimeStamp()'>Update Timestamp</button>
 <button *ngIf='heroe.active' (click)='updateActive(false)'>Mark UnActive</button>
-<button *ngIf='heroe.active' (click)='updateActive(true)'>Mark Active</button>
+<button *ngIf='!heroe.active' (click)='updateActive(true)'>Mark Active</button>
 <button (click)='deleteHeroe()'>Delete</button>
