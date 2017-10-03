@@ -1,11 +1,11 @@
 export class Heroe {
-  $key: string;
+  key: string;
   name: string;
   description: string;
   timeStamp: number;
   active = true;
 
-  constructor() {
+  public constructor() {
     this.name = '';
   }
 }

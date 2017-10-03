@@ -32,15 +32,15 @@ export class HeroeDetailComponent implements OnInit {
   }
 
   updateTimeStamp() {
-    this.heroeSvc.updateHeroe(this.heroe.$key, { timeStamp: (firebase.database.ServerValue.TIMESTAMP)});
+    this.heroeSvc.updateHeroe(this.heroe.key, { timeStamp: (firebase.database.ServerValue.TIMESTAMP)});
   }
 
   updateActive(value: boolean) {
-    this.heroeSvc.updateHeroe(this.heroe.$key, { active: value });
+    this.heroeSvc.updateHeroe(this.heroe.key, { active: value });
   }
 
   deleteHeroe() {
-    this.heroeSvc.deleteHeroe(this.heroe.$key);
+    this.heroeSvc.deleteHeroe(this.heroe.key);
   }
 
 

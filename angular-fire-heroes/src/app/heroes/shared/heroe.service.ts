@@ -35,6 +35,11 @@ export class HeroeService {
   }
 
   createHeroe(heroe: Heroe): void {
+    let  key: string;
+    key = this.heroes.push(heroe).key;
+    heroe.key = key;
+    console.log(key); // log key to console
+    console.log(heroe); // log current hero data before pushing to firebase
     this.heroes.push(heroe)
       .catch(error => this.handleError(error));
   }
