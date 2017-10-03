@@ -38,6 +38,7 @@ export class HeroeService {
     let  key: string;
     key = this.db.database.ref(this.basePath).key;
     heroe.key = key;
+
     console.log(key); // log key to console
     console.log(heroe); // log current hero data before pushing to firebase
     this.heroes.push(heroe)

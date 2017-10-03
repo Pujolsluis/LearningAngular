@@ -30,6 +30,10 @@ import {HeroeService} from './heroes/shared/heroe.service';
       {
         path: 'heroes',
         component: HeroesFormComponent
+      },
+      {
+        path: 'heroeslist',
+        component: HeroesListComponent
       }
     ])
   ],

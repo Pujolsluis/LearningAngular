@@ -14,7 +14,7 @@ export class HeroesListComponent implements OnInit {
   constructor(private heroeSvc: HeroeService) { }
 
   ngOnInit() {
-    this.heroes = this.heroeSvc.getHeroesList({limitToLast: 5});
+    this.heroes = this.heroeSvc.getHeroesList();
   }
 
   deleteHeroes() {

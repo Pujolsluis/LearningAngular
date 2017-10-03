@@ -1,6 +1,6 @@
-<h5>{{heroe.$key}}</h5>
+<h5>{{heroe.key}}</h5>
 <p>Heroe Name: {{heroe.name}} | Heroe Description: {{heroe.description}}
-  | Heroe Last Update: {{heroe.timeStamp}} | Heroe is Active: {{heroe.active}}</p>
+  | Heroe is Active: {{heroe.active}}</p>
 
 <span (click)='updateTimeStamp()'>Update Timestamp</span>
 <span *ngIf='heroe.active' (click)='updateActive(false)'>Mark UnActive</span>
