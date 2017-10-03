@@ -20,7 +20,6 @@ export class HeroesFormComponent implements OnInit {
   }
 
   createHeroe() {
-
     this.heroeSvc.createHeroe(this.heroe);
     this.heroe = new Heroe();
     console.log('dead?');
