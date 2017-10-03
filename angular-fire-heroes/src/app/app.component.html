@@ -1,17 +1,2 @@
-<div class="center">
-  <h1>Welcome to the {{title}} List</h1>
-  <h2>Key of first element: {{(itemObject| async)?.author}}</h2>
-  <ul>
-    <!--<li *ngFor="let item of items | async">-->
-      <!--<p>Author: {{item.author}}</p>-->
-      <!--<p>Content: {{item.content}}</p>-->
-      <!--<p>Description: {{item.description}}</p>-->
-      <!--<p>ID: {{item.id}}</p>-->
-      <!--<p>Picture: {{item.picture}}</p>-->
-      <!--<p>Release_date: {{item.release_date}}</p>-->
-      <!--<p>Title: {{item.title}}</p>-->
-    <!--</li>-->
-    <li *ngFor="let item of items | async">
-      {{item | json}}
-  </ul>
-</div>
+<a routerLink="/heroes">Heroes</a>
+<router-outlet></router-outlet>

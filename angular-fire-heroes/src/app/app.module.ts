@@ -10,22 +10,31 @@ import { HeroesListComponent } from './heroes/heroes-list/heroes-list.component'
 import { HeroesFormComponent } from './heroes/heroe-form/heroes-form.component';
 import { HeroeDetailComponent } from './heroes/heroe-detail/heroe-detail.component';
 import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import {HeroeService} from './heroes/shared/heroe.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesListComponent,
     HeroesFormComponent,
-    HeroeDetailComponent
+    HeroeDetailComponent,
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      {
+        path: 'heroes',
+        component: HeroesFormComponent
+      }
+    ])
   ],
-  providers: [],
+  providers: [HeroeService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

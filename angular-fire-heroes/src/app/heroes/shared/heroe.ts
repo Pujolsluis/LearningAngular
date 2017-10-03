@@ -5,4 +5,7 @@ export class Heroe {
   timeStamp: number;
   active = true;
 
+  constructor() {
+    this.name = '';
+  }
 }

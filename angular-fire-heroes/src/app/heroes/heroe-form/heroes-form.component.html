@@ -1,7 +1,9 @@
 <div>
   <form #heroeForm="ngForm">
-    <input type="text" name="name" [(ngModel)]="heroe.name">
-    <input type="text" name="name" [(ngModel)]="heroe.description">
-    <input type="checkbox" name="name" [(ngModel)]="heroe.active">
+    <p>Hero Name: {{heroe.name}}</p>
+    <input type="text" name="name" [(ngModel)]="heroe.name" placeholder=" ">
+    <input type="text" name="description" [(ngModel)]="heroe.description" placeholder=" ">
+    <input type="checkbox" name="checkbox" [(ngModel)]="heroe.active">
+    <button (click)="createHeroe()">Create Hero</button>
   </form>
 </div>
