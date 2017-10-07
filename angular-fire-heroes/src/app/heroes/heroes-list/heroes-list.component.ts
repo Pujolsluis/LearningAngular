@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HeroeService} from '../shared/heroe.service';
 import {FirebaseListObservable} from 'angularfire2/database';
 import {Heroe} from '../shared/heroe';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-heroes-list',
@@ -21,4 +22,7 @@ export class HeroesListComponent implements OnInit {
     this.heroeSvc.deleteAll();
   }
 
+  toolbarButtonClick(route: string) {
+
+  }
 }

@@ -1,3 +1,9 @@
-<a routerLink="">Heroes List</a>
-<a routerLink="/heroes">Add a Hero</a>
-<router-outlet></router-outlet>
+<md-toolbar [color]="'primary'" align="end">
+  <span>Heroes App</span>
+  <span class="fill-remaining-space"></span>
+  <button md-raised-button [color]="'accent'" class="toolbarButtonStyle" routerLink="" >Heroes List</button>
+  <button md-raised-button [color]="'accent'" class="toolbarButtonStyle" routerLink="/heroes">Add a Hero</button>
+</md-toolbar>
+<div class="mainPageContainer">
+  <router-outlet></router-outlet>
+</div>

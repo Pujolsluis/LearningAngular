@@ -1,6 +1,19 @@
-<div *ngFor="let heroe of heroes | async ">
-
-  <app-heroe-detail [heroe]='heroe'></app-heroe-detail>
-
-  <button (click)='deleteHeroes()'>Delete List of Heroes</button>
+<div class="mainPageContainer">
+  <md-list>
+    <md-card class="containerForList" *ngFor="let heroe of heroes | async ">
+      <md-card-header>
+        <md-card-title>
+          <h1>{{heroe.name}} Hero  Details</h1>
+        </md-card-title>
+      </md-card-header>
+      <md-card-content>
+        <app-heroe-detail  [heroe]='heroe'></app-heroe-detail>
+      </md-card-content>
+      <md-card-actions align="end">
+        <button md-raised-button [color]="'accent'"
+                class="buttonStyle right"
+                (click)='deleteHeroes()'>Delete List of Heroes</button>
+      </md-card-actions>
+    </md-card>
+  </md-list>
 </div>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database';
 import {Heroe} from './heroe';
 import * as firebase from 'firebase';
-import {FirebaseApp} from 'angularfire2'
+import {FirebaseApp} from 'angularfire2';
 
 @Injectable()
 export class HeroeService {

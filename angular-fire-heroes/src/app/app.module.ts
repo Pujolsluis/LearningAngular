@@ -12,6 +12,11 @@ import { HeroeDetailComponent } from './heroes/heroe-detail/heroe-detail.compone
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {HeroeService} from './heroes/shared/heroe.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {
+  MdButtonModule, MdCardModule, MdCheckboxModule, MdInputModule, MdListModule, MdSidenavModule,
+  MdToolbarModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -26,6 +31,14 @@ import {HeroeService} from './heroes/shared/heroe.service';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MdListModule,
+    MdCardModule,
+    MdButtonModule,
+    MdSidenavModule,
+    MdToolbarModule,
+    MdInputModule,
+    MdCheckboxModule,
     RouterModule.forRoot([
       {
         path: 'heroes',
@@ -40,5 +53,6 @@ import {HeroeService} from './heroes/shared/heroe.service';
   providers: [HeroeService],
   bootstrap: [AppComponent]
 })
+
 
 export class AppModule { }

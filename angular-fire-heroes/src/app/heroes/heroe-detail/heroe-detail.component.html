@@ -1,9 +1,12 @@
-<h5>{{heroe.key}}</h5>
-<p>Heroe Name: {{heroe.name}}</p>
-<p>Heroe Description: {{heroe.description}}</p>
-<p>Heroe is Active: {{heroe.active}}</p>
+<div class="containerForList">
+  <p><b>Heroe Name:</b> {{heroe.name}}</p>
+  <p><b>Heroe Key:</b> {{heroe.key}}</p>
+  <p><b>Heroe Description:</b> {{heroe.description}}</p>
+  <p><b>Membership creation:</b> {{heroe.timeStamp}}</p>
+  <p><b>Heroe is Active:</b> {{heroe.active}}</p>
 
-<button (click)='updateTimeStamp()'>Update Timestamp</button>
-<button *ngIf='heroe.active' (click)='updateActive(false)'>Mark UnActive</button>
-<button *ngIf='!heroe.active' (click)='updateActive(true)'>Mark Active</button>
-<button (click)='deleteHeroe()'>Delete</button>
+  <button (click)='updateTimeStamp()'>Update Timestamp</button>
+  <button *ngIf='heroe.active' (click)='updateActive(false)'>Mark UnActive</button>
+  <button *ngIf='!heroe.active' (click)='updateActive(true)'>Mark Active</button>
+  <button (click)='deleteHeroe()'>Delete</button>
+</div>

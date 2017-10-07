@@ -1,0 +1,20 @@
+.toolbarButtonStyle{
+  margin-top: 16px;
+  margin-right: 0px;
+  margin-left: 16px;
+  margin-bottom: 16px;
+}
+
+.fill-remaining-space {
+flex: 1 1 auto;
+}
+
+.mainPageContainer{
+  background-color: aliceblue;
+  padding-right: 30%;
+  padding-left: 30%;
+  padding-bottom: 30%;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+}
