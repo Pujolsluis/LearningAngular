@@ -1,12 +1,12 @@
 <div class="containerForList">
-  <p><b>Heroe Name:</b> {{heroe.name}}</p>
-  <p><b>Heroe Key:</b> {{heroe.key}}</p>
-  <p><b>Heroe Description:</b> {{heroe.description}}</p>
-  <p><b>Membership creation:</b> {{heroe.timeStamp}}</p>
-  <p><b>Heroe is Active:</b> {{heroe.active}}</p>
+  <p name="name"><b>Heroe Name:</b> {{heroe.name}}</p>
+  <p name="key"><b>Heroe Key:</b> {{heroe.key}}</p>
+  <p name="description"><b>Heroe Description:</b> {{heroe.description}}</p>
+  <p name="creationdate"><b>Membership creation:</b> {{heroe.timeStamp}}</p>
+  <p name="active"><b>Heroe is Active:</b> {{heroe.active}}</p>
 
-  <button (click)='updateTimeStamp()'>Update Timestamp</button>
-  <button *ngIf='heroe.active' (click)='updateActive(false)'>Mark UnActive</button>
-  <button *ngIf='!heroe.active' (click)='updateActive(true)'>Mark Active</button>
-  <button (click)='deleteHeroe()'>Delete</button>
+  <button name="updateButtonTimeStamp" (click)='updateTimeStamp()'>Update Timestamp</button>
+  <button name = "updateButtonStateFalse" *ngIf='heroe.active' (click)='updateActive(false)'>Mark UnActive</button>
+  <button name= "updateButtonStateTrue" *ngIf='!heroe.active' (click)='updateActive(true)'>Mark Active</button>
+  <button name="deleteButton" (click)='deleteHeroe()'>Delete</button>
 </div>

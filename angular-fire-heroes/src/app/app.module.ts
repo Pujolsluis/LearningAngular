@@ -18,6 +18,7 @@ import {
   MdToolbarModule
 } from '@angular/material';
 import { UploadFormComponent } from './uploads/upload-form/upload-form.component';
+import {UploadService} from './uploads/shared/upload.service';
 
 @NgModule({
   declarations: [
@@ -43,16 +44,24 @@ import { UploadFormComponent } from './uploads/upload-form/upload-form.component
     MdCheckboxModule,
     RouterModule.forRoot([
       {
-        path: 'heroes',
+        path: 'heroesform',
         component: HeroesFormComponent
       },
       {
         path: '',
+        redirectTo: 'heroeslist', pathMatch: 'full'
+      },
+      {
+        path: 'heroeslist',
         component: HeroesListComponent
+      },
+      {
+        path: 'uploadform',
+        component: UploadFormComponent
       }
     ])
   ],
-  providers: [HeroeService],
+  providers: [HeroeService, UploadService],
   bootstrap: [AppComponent]
 })
 

@@ -7,9 +7,7 @@
     <md-form-field>
     <input mdInput type="text" name="description" [(ngModel)]="heroe.description" placeholder=" ">
     </md-form-field>
-    <md-form-field>
-    <input  mdInput type="checkbox" name="checkbox" [(ngModel)]="heroe.active">
-    </md-form-field>
+    <input type="checkbox" name="checkbox" [(ngModel)]="heroe.active">
     <button (click)="createHeroe()">Create Hero</button>
   </form>
 </div>
