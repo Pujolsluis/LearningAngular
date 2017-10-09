@@ -7,10 +7,10 @@
         </md-card-title>
       </md-card-header>
       <md-card-content>
-        <app-heroe-detail  [heroe]='heroe'></app-heroe-detail>
+        <app-heroe-detail [heroe]='heroe'></app-heroe-detail>
       </md-card-content>
       <md-card-actions align="end">
-        <button md-raised-button [color]="'accent'"
+        <button md-raised-button name="deleteListOfHeroes" [color]="'accent'"
                 class="buttonStyle right"
                 (click)='deleteHeroes()'>Delete List of Heroes</button>
       </md-card-actions>
