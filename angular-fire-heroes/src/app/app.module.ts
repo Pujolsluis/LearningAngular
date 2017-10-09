@@ -17,6 +17,7 @@ import {
   MdButtonModule, MdCardModule, MdCheckboxModule, MdInputModule, MdListModule, MdSidenavModule,
   MdToolbarModule
 } from '@angular/material';
+import { UploadFormComponent } from './uploads/upload-form/upload-form.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {
     HeroesListComponent,
     HeroesFormComponent,
     HeroeDetailComponent,
+    UploadFormComponent,
   ],
   imports: [
     BrowserModule,
